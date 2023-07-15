@@ -1,18 +1,8 @@
 <template>
-  <img alt="Vue logo" src="./assets/logo.png">
-  <HelloWorld msg="Welcome to Your Vue.js App"/>
+  <router-view/>
+  <new-navbar></new-navbar>
+  <new-sidebar></new-sidebar>
 </template>
-
-<script>
-import HelloWorld from './components/HelloWorld.vue'
-
-export default {
-  name: 'App',
-  components: {
-    HelloWorld
-  }
-}
-</script>
 
 <style>
 #app {
@@ -20,7 +10,17 @@ export default {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   text-align: center;
-  color: #2c3e50;
-  margin-top: 60px;
 }
 </style>
+
+<script>
+import newSidebar from "./components/sidebar/newSidebar.vue";
+import newNavbar from "./components/navbar/newNavbar.vue";
+export default {
+  components:{
+    newSidebar,
+    newNavbar
+  }
+  
+}
+</script>
