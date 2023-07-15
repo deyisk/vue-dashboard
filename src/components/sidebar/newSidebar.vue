@@ -10,7 +10,7 @@
 export default {
     data(){
         return{
-            menuItems: [ //liste oluşturduk..
+            menuItems: [ 
                 { id:1, label:'Home', route: '/home'},
                 { id:2, label: 'About', route: '/about'},
                 { id:3, label: 'Services', route: '/services'},
