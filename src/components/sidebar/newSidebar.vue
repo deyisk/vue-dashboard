@@ -1,31 +1,30 @@
 <template>
-<div class="sidebar">
+  <div class="sidebar">
     <ul>
-        <li v-for="item in menuItems" :key="item.id" @click="handleItemClick(item)">{{ item.label }}</li>
+      <li v-for="item in menuItems" :key="item.id" @click="handleItemClick(item)">{{ item.label }}</li>
     </ul>
-</div>
+  </div>
 </template>
 
 <script>
 export default {
-    data(){
-        return{
-            menuItems: [ 
-                { id:1, label:'Home', route: '/home'},
-                { id:2, label: 'About', route: '/about'},
-                { id:3, label: 'Services', route: '/services'},
-                { id:4, label: 'Contact', route:'/contact'},
-                { id:5, label:'Home', route: '/home'},
-                { id:6, label: 'About', route: '/about'},
-            ]
-        };
-    },
-    methods:{
-        handleItemClick(item){
-            console.log('Clicked:',item.label)
-        }
+  data() {
+    return {
+      menuItems: [
+        { id: 1, label: 'Dashboard', route: '/dashboard' },
+        { id: 2, label: 'User Profile', route: '/userprofile' },
+        { id: 3, label: 'Table List', route: '/tablelist' },
+        { id: 4, label: 'File Manager', route: '/filemanager' },
+        { id: 5, label: 'Contact', route: '/contact' }
+      ]
+    };
+  },
+  methods: {
+    handleItemClick(item) {
+      console.log('Clicked:', item.label);
     }
-}
+  }
+};
 </script>
 
 <style>
@@ -46,11 +45,34 @@ export default {
   cursor: pointer;
   padding: 5px;
   margin: 50px;
+  text-align: center;
+  white-space: nowrap;
 }
 
 .sidebar li:hover {
-  background-color: #e0e0e0;
+  transform: scale(1.2);
+}
+
+@media (max-width: 768px) {
+  .sidebar {
+    width: 100%;
+    height: auto;
+    padding: 10px;
+    margin-top: 1rem;
+  }
+
+  .sidebar ul {
+    margin-top: 2rem;
+  }
+
+  .sidebar li {
+    margin: 20px;
+  }
+}
+
+@media (max-width: 576px) {
+  .sidebar li {
+    margin: 10px;
+  }
 }
 </style>
-
-
