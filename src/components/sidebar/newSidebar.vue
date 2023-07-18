@@ -1,78 +1,98 @@
 <template>
   <div class="sidebar">
     <ul>
-      <li v-for="item in menuItems" :key="item.id" @click="handleItemClick(item)">{{ item.label }}</li>
+      <li
+        v-for="item in menuItems"
+        :key="item.id"
+        @click="handleItemClick(item)"
+      >
+        {{ item.label }}
+      </li>
     </ul>
   </div>
+ 
 </template>
+
 
 <script>
 export default {
   data() {
     return {
       menuItems: [
-        { id: 1, label: 'Dashboard', route: '/dashboard' },
-        { id: 2, label: 'User Profile', route: '/userprofile' },
-        { id: 3, label: 'Table List', route: '/tablelist' },
-        { id: 4, label: 'File Manager', route: '/filemanager' },
-        { id: 5, label: 'Contact', route: '/contact' }
-      ]
+        { id: 1, label: "Dashboard", route: "/dashboard" },
+        { id: 2, label: "User Profile", route: "/userprofile" },
+        { id: 3, label: "Table List", route: "/tablelist" },
+        { id: 4, label: "File Manager", route: "/filemanager" },
+        { id: 5, label: "Contact", route: "/contact" },
+      ],
     };
   },
   methods: {
     handleItemClick(item) {
-      console.log('Clicked:', item.label);
-    }
-  }
+      console.log("Clicked:", item.label);
+    },
+  },
 };
 </script>
 
 <style>
-.sidebar {
-  background-color: #fecaca;
-  width: 25vh;
-  height: 100vh;
-  padding: 10px;
+
+#app{
+  height: 100%;
+   margin-top: 0;
+  padding-top: 0;
+   margin: 0;
 }
 
-.sidebar ul {
-  list-style: none;
-  padding: 5px;
-  margin-top: 6rem;
+body{
+  margin:0;
+  margin-top:0;
 }
 
-.sidebar li {
-  cursor: pointer;
-  padding: 5px;
-  margin: 50px;
+html,body{
+  height: 100%;
+  width: 50%;
+  background-color: pink;
+  margin: 0;
+  margin-top: 0;
+  padding-top: 0;
+}
+
+.sidebar{
+  height: 100%;
+  width:50%;
+  max-width: 250px;
+  min-width: 180px;
+  background-color: red;
+  margin: 0;
+  padding: 0;
+  margin-top: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  overflow:hidden;
+
+}
+
+.sidebar ul{
+  list-style:none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  
+  
+}
+
+.sidebar li{
+  cursor:pointer;
   text-align: center;
-  white-space: nowrap;
+  margin-bottom:25%;
 }
 
-.sidebar li:hover {
+.sidebar li:hover{
   transform: scale(1.2);
 }
 
-@media (max-width: 768px) {
-  .sidebar {
-    width: 100%;
-    height: auto;
-    padding: 10px;
-    margin-top: 1rem;
-  }
 
-  .sidebar ul {
-    margin-top: 2rem;
-  }
-
-  .sidebar li {
-    margin: 20px;
-  }
-}
-
-@media (max-width: 576px) {
-  .sidebar li {
-    margin: 10px;
-  }
-}
 </style>
